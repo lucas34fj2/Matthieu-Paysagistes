@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qui sommes-nous – Matthieu Paysagistes</title>
+  <link rel="stylesheet" href="qui-sommes-nous.css" />
+</head>
+<body>
+  <header class="header-top">
+    <div class="logo">
+      <img src="LOGO.png" alt="Logo Matthieu Paysagistes" />
+      <span>Un professionnel<br>pour l'entretien de vos tombe & le fleurissement</span>
+    </div>
+    <div class="btn-menu">
+      <button onclick="window.location.href='menu.html'">Retour au menu</button>
+    </div>
+  </header>
+
+  <section class="intro">
+    <div class="intro-text">
+      <h1>Qui suis-je ?</h1>
+      <p>
+        Bonjour, je m'appelle <strong>Matthieu Dupont</strong> et je propose un service spécialisé
+        d’entretien et de nettoyage de tombes et caveaux. Beaucoup de familles n'ont pas la possibilité
+        d'entretenir régulièrement les sépultures de leurs proches, faute de temps ou de proximité.
+        C’est là que j’interviens, avec un service respectueux, professionnel et sur mesure.
+      </p>
+      <p>
+        Je propose des interventions ponctuelles ou des abonnements pour assurer un entretien régulier,
+        avec en option la pose de fleurs et des petits travaux de rénovation. Mon objectif :
+        permettre aux familles d’honorer la mémoire de leurs proches en toute sérénité.
+      </p>
+    </div>
+  </section>
+
+  <section class="valeurs fade-in-on-scroll">
+    <h2>Nos valeurs</h2>
+    <ul>
+      <li>Respect</li>
+      <li>Professionnalisme</li>
+      <li>Écoute</li>
+      <li>Discrétion</li>
+    </ul>
+  </section>
+
+  <section class="avis fade-in-on-scroll">
+    <h2>Avis de nos clients</h2>
+    <blockquote>
+      <p>“Un service irréprochable, très humain. Merci !”</p>
+      <footer>– Mme Lefèvre</footer>
+    </blockquote>
+    <blockquote>
+      <p>“Professionnel et attentionné. Je recommande.”</p>
+      <footer>– M. Bernard</footer>
+    </blockquote>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Matthieu Paysagistes – Tous droits réservés</p>
+  </footer>
+
+  <!-- Script d’animation au scroll -->
+  <script>
+    const elements = document.querySelectorAll('.fade-in-on-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

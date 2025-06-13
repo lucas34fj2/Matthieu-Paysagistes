@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Matthieu Paysagistes</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset de base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'EB Garamond', serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    /* HEADER */
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 15px 25px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .logo span {
+      color: #4CAF50;
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    /* Bouton retour menu */
+    .btn-menu button {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: 600;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-menu button:hover {
+      background-color: #388e3c;
+    }
+
+    /* SECTION IMAGE DE FOND + TEXTE */
+    .image-fond {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 30px 0;
+      border-radius: 10px;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      padding: 0 20px;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    /* SECTION CONTACT */
+    .contact-section {
+      background-color: white;
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+      padding: 30px 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-section h2 {
+      color: #4CAF50;
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .contact-section p {
+      text-align: center;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .contact-section p a {
+      color: #4CAF50;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-section p a:hover {
+      text-decoration: underline;
+    }
+
+    /* Bouton téléphone */
+    .phone-button {
+      display: block;
+      width: max-content;
+      margin: 0 auto 20px auto;
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 22px;
+      font-weight: 600;
+      border-radius: 30px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .phone-button:hover {
+      background-color: #388e3c;
+    }
+
+    /* FORMULAIRE CONTACT */
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 20px;
+    }
+
+    .contact-form div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form label {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #4CAF50;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: 'EB Garamond', serif;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    /* Le textarea prend toute la largeur */
+    .contact-form div[style*="grid-column"] {
+      grid-column: 1 / -1;
+    }
+
+    /* Bouton envoyer */
+    .contact-form button[type="submit"] {
+      margin-top: 12px;
+      width: 150px;
+      justify-self: start;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: 600;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button[type="submit"]:hover {
+      background-color: #388e3c;
+    }
+
+    /* Responsive mobile amélioré */
+    @media screen and (max-width: 600px) {
+      /* Header en colonne */
+      .header-top {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 15px;
+      }
+
+      .logo {
+        gap: 8px;
+      }
+
+      .logo span {
+        font-size: 1.1rem;
+        text-align: center;
+      }
+
+      .btn-menu {
+        width: 100%;
+        text-align: center;
+      }
+
+      .btn-menu button {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      /* Image fond réduit hauteur et texte plus petit */
+      .image-fond {
+        height: 180px;
+        font-size: 1.2rem;
+        padding: 0 15px;
+      }
+
+      /* Contact section padding réduit */
+      .contact-section {
+        padding: 20px 15px;
+        margin: 20px 10px 40px;
+      }
+
+      /* Formulaire passe en une colonne */
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form div[style*="grid-column"] {
+        grid-column: auto;
+      }
+
+      /* Bouton envoyer pleine largeur */
+      .contact-form button[type="submit"] {
+        width: 100%;
+        max-width: none;
+      }
+
+      /* Bouton téléphone pleine largeur */
+      .phone-button {
+        width: 100%;
+        max-width: none;
+        padding: 14px 0;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header-top">
+    <div class="logo">
+      <img src="logo.png" alt="Logo de l'entreprise" />
+      <span>Un professionnel <br />pour l'entretien de vos tombe & le fleurissement</span>
+    </div>
+
+    <div class="btn-menu">
+      <button onclick="window.location.href='menu.html'">Retour au menu</button>
+    </div>
+  </header>
+
+  <div class="image-fond">
+    <h2>Un service respectueux, à votre écoute en toute simplicité.</h2>
+  </div>
+
+  <!-- SECTION DE CONTACT -->
+  <section class="contact-section">
+    <h2>Besoin d’aide, d’informations ou de passer commande ? Nous sommes à votre écoute.</h2>
+    <p><a href="#">Cet espace est fait pour vous.</a></p>
+    <a href="tel:0780089876" class="phone-button">07 80 08 98 76</a>
+    <p><strong>Par email :</strong> <a href="mailto:matthieu.paysagiste05@gmail.com">matthieu.paysagiste05@gmail.com</a></p>
+
+    <form class="contact-form">
+      <div>
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom" />
+      </div>
+      <div>
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+      </div>
+      <div>
+        <label for="telephone">Téléphone</label>
+        <input type="tel" id="telephone" name="telephone" />
+      </div>
+      <div style="grid-column: 1 / -1;">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+        <button type="submit">Envoyer</button>
+      </div>
+    </form>
+  </section>
+</body>
+</html>

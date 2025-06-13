@@ -1,0 +1,227 @@
+/* Reset et style de base */
+body {
+  font-family: 'EB Garamond', serif;
+  margin: 0;
+  padding: 0;
+  background: url('services_fond.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+
+/* Bouton retour */
+.btn-retour button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.btn-retour button:hover {
+  background-color: #45a049;
+}
+
+/* Contenu principal */
+.main-content {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #4CAF50;
+}
+
+/* Section services */
+.services {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.services h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.services ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Appel à contact */
+.contact-cta {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.contact-cta a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.contact-cta a:hover {
+  background-color: #388e3c;
+}
+
+/* Section Avant / Après classique */
+.avant-apres {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+}
+
+.avant-apres h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.photos-comparaison {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.photo {
+  width: 45%;
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.photo p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #444;
+  font-size: 16px;
+}
+
+/* Section Avant / Après carousel */
+.avant-apres-carousel {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.avant-apres-carousel h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.carousel {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.carousel-images img {
+  width: 100%;
+  display: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-images img.active {
+  display: block;
+}
+
+/* Flèches du carousel */
+.carousel-btn,
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(76, 175, 80, 0.7);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  transition: background-color 0.3s;
+  z-index: 10;
+}
+
+.carousel-btn:hover,
+.arrow:hover {
+  background-color: rgba(76, 175, 80, 1);
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .logo span {
+    font-size: 1rem;
+  }
+
+  .btn-retour button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .photo {
+    width: 90%;
+  }
+}

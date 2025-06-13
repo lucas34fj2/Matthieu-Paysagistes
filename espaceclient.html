@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Espace Client - Matthieu Paysagistes</title>
+  <link rel="stylesheet" href="menu.css" />
+  <link rel="stylesheet" href="espaceclient.css" />
+  <style>
+    body {
+      font-family: 'EB Garamond', serif;
+      background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+      margin: 0;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+      gap: 2rem;
+    }
+
+    .tab-button {
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      color: #2a7a3f;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tab-button.active {
+      border-color: #2a7a3f;
+    }
+
+    .espace-client {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      padding: 2rem 1rem;
+    }
+
+    .form-container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      padding: 3rem 2.5rem;
+      max-width: 450px;
+      width: 100%;
+      animation: slideIn 0.6s ease-out;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.9rem;
+      color: #2a7a3f;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+
+    label {
+      font-weight: bold;
+      color: #444;
+    }
+
+    input {
+      padding: 0.8rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    input:focus {
+      border-color: #2a7a3f;
+      outline: none;
+    }
+
+    button {
+      padding: 1rem;
+      background-color: #2a7a3f;
+      border: none;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #256f36;
+    }
+
+    .info-text {
+      text-align: center;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      color: #666;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="top-bar">
+    <div class="logo">
+      <img src="LOGO.png" alt="Matthieu Paysagistes" />
+      <span>Un professionnel<br />pour l'entretien de vos tombe & le fleurissement</span>
+    </div>
+    <div class="contact-lang">
+      <div class="contact">
+        <span>07 80 08 98 76</span>
+        <a href="contact.html">CONTACT</a>
+        <a href="espaceclient.html" class="active">ESPACE CLIENT</a>
+      </div>
+    </div>
+  </div>
+  <nav class="main-nav">
+    <ul class="nav-desktop">
+      <li><a href="services.html">SERVICES</a></li>
+      <li><a href="menu.html">TARIFS</a></li>
+      <li><a href="qui-sommes-nous.html">QUI SOMMES NOUS</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="tabs">
+  <button class="tab-button active" onclick="showTab('login')">Connexion</button>
+  <button class="tab-button" onclick="showTab('register')">Créer un compte</button>
+</div>
+
+<main class="espace-client">
+  <div class="form-container" id="login-form">
+    <h1>Connexion à votre espace client</h1>
+    <form onsubmit="event.preventDefault(); showDashboard();">
+      <label for="email">Adresse e-mail</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit">Se connecter</button>
+    </form>
+    <p class="info-text">Accédez à vos services personnalisés et suivez vos demandes en ligne.</p>
+  </div>
+
+  <div class="form-container hidden" id="register-form">
+    <h1>Créer un compte</h1>
+    <form onsubmit="event.preventDefault(); alert('Compte créé avec succès !');">
+      <label for="new-name">Nom complet</label>
+      <input type="text" id="new-name" name="new-name" required />
+
+      <label for="new-email">Adresse e-mail</label>
+      <input type="email" id="new-email" name="new-email" required />
+
+      <label for="new-password">Mot de passe</label>
+      <input type="password" id="new-password" name="new-password" required />
+
+      <button type="submit">Créer un compte</button>
+    </form>
+    <p class="info-text">Créez votre compte client en quelques clics.</p>
+  </div>
+</main>
+
+<section class="dashboard hidden">
+  <div class="dashboard-container">
+    <h2>Tableau de bord client</h2>
+
+    <div class="dashboard-section">
+      <h3>Prochains entretiens</h3>
+      <ul>
+        <li>Entretien général – 18 juin 2025</li>
+        <li>Taille de haies – 24 juin 2025</li>
+      </ul>
+    </div>
+
+    <div class="dashboard-section">
+      <h3>Historique des prestations</h3>
+      <ul>
+        <li>Nettoyage de tombes – 5 juin 2025</li>
+        <li>Tonte de pelouse – 28 mai 2025</li>
+      </ul>
+    </div>
+
+    <div class="dashboard-section">
+      <h3>Facturation & paiements</h3>
+      <ul>
+        <li>Facture #1024 – Payée</li>
+        <li>Facture #1023 – En attente</li>
+      </ul>
+    </div>
+
+    <div class="dashboard-section">
+      <h3>Messagerie</h3>
+      <p>Aucun nouveau message.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Matthieu Paysagistes - Tous droits réservés</p>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="services.html" class="nav-item">Services</a>
+  <a href="menu.html" class="nav-item">Tarifs</a>
+  <a href="qui-sommes-nous.html" class="nav-item">À propos</a>
+  <a href="contact.html" class="nav-item">Contact</a>
+  <a href="faq.html" class="nav-item">FAQ</a>
+</nav>
+
+<script>
+  function showTab(tab) {
+    document.getElementById('login-form').classList.toggle('hidden', tab !== 'login');
+    document.getElementById('register-form').classList.toggle('hidden', tab !== 'register');
+
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.tab-button[onclick="showTab('${tab}')"]`).classList.add('active');
+  }
+
+  function showDashboard() {
+    document.querySelector("main").classList.add("hidden");
+    document.querySelector(".dashboard").classList.remove("hidden");
+  }
+</script>
+
+</body>
+</html>
