@@ -169,3 +169,50 @@ footer {
     text-align: right;
   }
 }
+.zone-desservie {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.zone-desservie h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.zone-desservie p,
+.zone-desservie ul {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.map-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}.zone-desservie {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.zone-desservie h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.zone-desservie p,
+.zone-desservie ul {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.map-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
