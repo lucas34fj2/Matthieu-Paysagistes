@@ -362,3 +362,43 @@ main {
   opacity: 1;
   transform: translateY(0);
 }
+@media screen and (max-width: 768px) {
+  .formules table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .formules table thead {
+    display: none; /* Cacher l'en-tête */
+  }
+
+  .formules table tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+    padding: 10px;
+  }
+
+  .formules table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+  }
+
+  .formules table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #4CAF50;
+  }
+
+  .formules table tr:last-child td {
+    border-bottom: none;
+  }
+}
